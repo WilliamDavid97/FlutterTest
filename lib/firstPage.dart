@@ -114,14 +114,14 @@ class _FirstPageState extends State<FirstPage> {
                               ),
                               Column(
                                 children: <Widget>[
-                                  Container(
-                                    child: Text(
+                                  Wrap(children: [
+                                    Text(
                                       m.title,
                                       maxLines: 2,
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 15.0),
                                     ),
-                                  ),
+                                  ]),
                                   Row(
                                     children: <Widget>[
                                       StarRating(

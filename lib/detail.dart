@@ -23,10 +23,6 @@ class _DetailPageState extends State<DetailPage> {
       ),
     );
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Details"),
-        centerTitle: true,
-      ),
       body: ListView(
         children: <Widget>[
           ImageSlid,
