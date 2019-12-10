@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_api_test/detail.dart';
 import 'package:flutter_api_test/firstPage.dart';
 import 'package:flutter_api_test/image_slider.dart';
-import 'package:flutter_api_test/refresh.dart';
-import 'package:flutter_api_test/secondPage.dart';
+import 'package:flutter_api_test/pokemon/mainPokemon.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -62,9 +61,9 @@ class _HomePageState extends State<HomePage>
       body: TabBarView(
         controller: controller,
         children: <Widget>[
+          MainPokemon(),
           FirstPage(),
           ImageSlider(),
-          RefreshTest(),
           DetailPage(),
         ],
       ),
