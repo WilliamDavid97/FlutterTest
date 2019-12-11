@@ -1,5 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_api_test/upload_test/upload_test.dart';
+
+import 'animation/animation1.dart';
 
 class ImageSlider extends StatefulWidget {
   @override
@@ -98,6 +101,14 @@ class _ImageSliderState extends State<ImageSlider> {
                 child: Text('>'),
               ),
             ],
+          ),
+          FlatButton.icon(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AnimationTest()));
+            },
+            icon: Icon(Icons.file_upload),
+            label: Text("Animation"),
           )
         ],
       ),

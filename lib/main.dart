@@ -4,6 +4,8 @@ import 'package:flutter_api_test/firstPage.dart';
 import 'package:flutter_api_test/image_slider.dart';
 import 'package:flutter_api_test/pokemon/mainPokemon.dart';
 
+import 'animation/animation1.dart';
+
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
@@ -61,10 +63,10 @@ class _HomePageState extends State<HomePage>
       body: TabBarView(
         controller: controller,
         children: <Widget>[
+          ImageSlider(),
           MainPokemon(),
           FirstPage(),
-          ImageSlider(),
-          DetailPage(),
+          AnimationTest(),
         ],
       ),
     );
