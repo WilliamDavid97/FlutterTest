@@ -75,7 +75,7 @@ class _AnimationTestState extends State<AnimationTest>
                       child: Column(
                         children: <Widget>[
                           Text('Loading ......'),
-                          Text(animation.value,
+                          Text(animation.value.toString(),
                               style: TextStyle(fontSize: 40.0))
                         ],
                       ),

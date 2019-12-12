@@ -1,8 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_api_test/animation/animation4.dart';
 import 'package:flutter_api_test/upload_test/upload_test.dart';
 
 import 'animation/animation1.dart';
+import 'animation/animation2.dart';
+import 'animation/animation3.dart';
+import 'animation/redial_button.dart';
 
 class ImageSlider extends StatefulWidget {
   @override
@@ -102,13 +106,56 @@ class _ImageSliderState extends State<ImageSlider> {
               ),
             ],
           ),
-          FlatButton.icon(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AnimationTest()));
-            },
-            icon: Icon(Icons.file_upload),
-            label: Text("Animation"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              FlatButton.icon(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AnimationTest()));
+                },
+                icon: Icon(Icons.filter_1),
+                label: Text("Animation"),
+              ),
+              FlatButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TestingAnimate()));
+                },
+                icon: Icon(Icons.filter_2),
+                label: Text("Animation"),
+              ),
+              FlatButton.icon(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Animation3()));
+                },
+                icon: Icon(Icons.filter_3),
+                label: Text("Animation"),
+              ),
+            ],
+          ),
+          Row(
+            children: <Widget>[
+              FlatButton.icon(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Animation4()));
+                },
+                icon: Icon(Icons.filter_4),
+                label: Text("Animation"),
+              ),
+              FlatButton.icon(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => RadialTest()));
+                },
+                icon: Icon(Icons.filter_5),
+                label: Text("Radial"),
+              )
+            ],
           )
         ],
       ),
