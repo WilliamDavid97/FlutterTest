@@ -6,9 +6,10 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.google.gms:google-services:4.2.0'
     }
 }
-
+4
 allprojects {
     repositories {
         google()
@@ -26,4 +27,10 @@ subprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'androidx.media:media:1.0.0'
+    }
 }

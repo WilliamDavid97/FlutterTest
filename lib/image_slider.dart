@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_api_test/animation/animation4.dart';
-import 'package:flutter_api_test/upload_test/upload_test.dart';
+import 'package:flutter_api_test/animation/map_test.dart';
 
 import 'animation/animation1.dart';
 import 'animation/animation2.dart';
@@ -154,6 +154,14 @@ class _ImageSliderState extends State<ImageSlider> {
                 },
                 icon: Icon(Icons.filter_5),
                 label: Text("Radial"),
+              ),
+              FlatButton.icon(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MapTest()));
+                },
+                icon: Icon(Icons.map),
+                label: Text("Map"),
               )
             ],
           )

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_api_test/animation/map_test.dart';
 import 'package:flutter_api_test/detail.dart';
 import 'package:flutter_api_test/firstPage.dart';
 import 'package:flutter_api_test/image_slider.dart';
 import 'package:flutter_api_test/pokemon/mainPokemon.dart';
-
-import 'animation/animation1.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -57,6 +56,9 @@ class _HomePageState extends State<HomePage>
             Tab(
               icon: Icon(Icons.slideshow),
             ),
+            // Tab(
+            //   icon: Icon(Icons.map),
+            // ),
           ],
         ),
       ),

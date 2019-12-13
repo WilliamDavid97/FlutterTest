@@ -9,7 +9,7 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
-    Widget ImageSlid = Container(
+    Widget ImageSlide = Container(
       height: 200,
       child: Carousel(
         boxFit: BoxFit.fill,
@@ -25,7 +25,7 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          ImageSlid,
+          ImageSlide,
         ],
       ),
       // body: SafeArea(

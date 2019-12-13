@@ -14,16 +14,19 @@ class _RadialTestState extends State<RadialTest> {
   void initState() {
     itemsActionBar = [
       FloatingActionButton(
+        heroTag: '1',
         backgroundColor: Colors.greenAccent,
         onPressed: () {},
         child: Icon(Icons.add),
       ),
       FloatingActionButton(
+        heroTag: '2',
         backgroundColor: Colors.indigoAccent,
         onPressed: () {},
         child: Icon(Icons.camera),
       ),
       FloatingActionButton(
+        heroTag: '3',
         backgroundColor: Colors.orangeAccent,
         onPressed: () {},
         child: Icon(Icons.card_giftcard),
@@ -32,6 +35,7 @@ class _RadialTestState extends State<RadialTest> {
     super.initState();
   }
 
+  bool toggleValue = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,9 +44,51 @@ class _RadialTestState extends State<RadialTest> {
         centerTitle: true,
       ),
       body: Center(
-        child: Container(
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 1000),
+          height: 40.0,
+          width: 100.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            color: toggleValue
+                ? Colors.greenAccent[100]
+                : Colors.redAccent[100].withOpacity(0.5),
+          ),
           child: Stack(
-            children: <Widget>[],
+            children: <Widget>[
+              AnimatedPositioned(
+                duration: Duration(milliseconds: 1000),
+                curve: Curves.easeIn,
+                top: 3.0,
+                left: toggleValue ? 60.0 : 0.0,
+                right: toggleValue ? 0.0 : 60.0,
+                child: InkWell(
+                  onTap: toggleButtons,
+                  child: AnimatedSwitcher(
+                      duration: Duration(milliseconds: 1000),
+                      transitionBuilder:
+                          (Widget child, Animation<double> animation) {
+                        return ScaleTransition(
+                          child: child,
+                          scale: animation,
+                        );
+                      },
+                      child: toggleValue
+                          ? Icon(
+                              Icons.check_circle,
+                              color: Colors.green,
+                              size: 35.0,
+                              key: UniqueKey(),
+                            )
+                          : Icon(
+                              Icons.remove_circle,
+                              color: Colors.red,
+                              size: 35.0,
+                              key: UniqueKey(),
+                            )),
+                ),
+              )
+            ],
           ),
         ),
       ),
@@ -55,5 +101,11 @@ class _RadialTestState extends State<RadialTest> {
         curveAnim: Curves.ease,
       ),
     );
+  }
+
+  toggleButtons() {
+    setState(() {
+      toggleValue = !toggleValue;
+    });
   }
 }
