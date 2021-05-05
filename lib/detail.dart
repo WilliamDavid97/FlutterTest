@@ -11,6 +11,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     Widget ImageSlide = Container(
       height: 200,
+      width: 100,
       child: Carousel(
         boxFit: BoxFit.fill,
         images: [
