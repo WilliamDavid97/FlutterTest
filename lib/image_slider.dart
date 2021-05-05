@@ -29,6 +29,7 @@ class _ImageSliderState extends State<ImageSlider> {
     for (var i = 0; i < list.length; i++) {
       result.add(handler(i, list[i]));
     }
+    //print("Hello");
     return result;
   }
 

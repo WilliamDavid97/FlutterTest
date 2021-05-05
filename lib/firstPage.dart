@@ -24,7 +24,7 @@ class _FirstPageState extends State<FirstPage> {
   Future<MovieResponse> getMovie() async {
     return await http.get(url + page.toString()).then((res) {
       MovieResponse mr = MovieResponse.fromJson(json.decode(res.body));
-      // page = page + 1;
+      page = page + 1;
       return mr;
     });
   }
