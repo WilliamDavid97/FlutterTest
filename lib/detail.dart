@@ -13,7 +13,7 @@ class _DetailPageState extends State<DetailPage> {
       height: 200,
       width: 100,
       child: Carousel(
-        boxFit: BoxFit.fill,
+        boxFit: BoxFit.contain,
         images: [
           AssetImage('images/joker1.jpg'),
           AssetImage('images/joker2.jpg'),
